@@ -16,4 +16,5 @@ LINUX 使用笔记
    nodejs
    cad
    tools
+   archlinux
 

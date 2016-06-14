@@ -1,0 +1,77 @@
+Arch Linux
+===========
+
+U盘安装
+---------
+
+磁盘分区::
+
+    lsblk
+    parted
+    (parted) mklabel gpt
+    (parted) mkpart ESP fat32 1MiB 513MiB
+    (parted) set 1 boot on
+    (parted) mkpart primary ext4 513MiB 100%
+
+挂载磁盘::
+
+    mount /dev/sdxy /mnt
+    mkdir -p /mnt/boot
+    mount /dev/sdxz /mnt/boot
+
+磁盘格式化::
+
+    mkfs.fat -F32 /dev/sdxy
+    mkfs.ext4 /dev/sdxy
+    mkswap /dev/sdxy
+    swapon /dev/sdxy
+
+安装基础包::
+
+    vi /etc/pacman.d/mirrorlist
+    pacstrap -i /mnt base base-devel
+
+生成配置文件::
+
+    genfstab -U /mnt >> /mnt/etc/fstab
+
+切换到archlinux::
+
+    arch-chroot /mnt /bin/bash
+
+本地化::
+
+    locale-gen
+    vi /etc/locale.gen
+    tzselect
+
+安装Boot Loader::
+
+    bootctl install
+
+设置主机名称::
+    
+    vi /etc/hostname
+
+设置密码::
+    
+    passwd
+
+重启::
+
+    umount -R /mnt
+    reboot
+
+
+基础配置
+---------
+
+添加用户/组::
+
+    groupadd chen
+    useradd -m -g chen chen
+
+安装桌面环境::
+
+    pacman -S xorg-xinit
+    pacman -S xfce4
