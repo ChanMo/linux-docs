@@ -17,4 +17,5 @@ LINUX 使用笔记
    cad
    tools
    archlinux
+   opencv
 

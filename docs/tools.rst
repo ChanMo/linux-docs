@@ -29,6 +29,16 @@ git
   git remote add origin ssh://user@server:port/path/to/project.git
   git push origin master
 
+gh-pages::
+
+   git checkout --orphan gh-pages
+   git rm -rf .
+   ...
+   git push origin gh-pages
+
+链接地址：http(s)://<username>.github.io/<projectname>
+
+
 
 pandoc
 ------
