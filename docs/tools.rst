@@ -52,6 +52,7 @@ sphinx
 使用方法::
 
   sudo pip install sphinx sphinx-autobuild
+  sudo pip install sphinx_rtd_theme
   sphinx-quickstart
   make html
   sphinx-autobuild . _build_html

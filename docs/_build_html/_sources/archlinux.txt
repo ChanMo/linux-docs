@@ -70,8 +70,27 @@ U盘安装
 
     groupadd chen
     useradd -m -g chen chen
+    passwd chen
+    vim /etc/sudoers
 
 安装桌面环境::
 
     pacman -S xorg-xinit
     pacman -S xfce4
+
+安装字体::
+
+    pacman -S ttf-bitstream-vera
+    pacman -S adobe-source-code-pro-fonts
+    pacman -S wqy-zenhei
+
+安装输入法::
+
+    pacman -S fcitx
+    pacman -S fcitx-sunpinyin
+    pacman -S fcitx-gtk2
+    pacman -S fcitx-configtool
+
+使用VPN::
+
+    pacman -S pptpclient

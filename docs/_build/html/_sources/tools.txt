@@ -5,9 +5,11 @@
 
 ssh
 ---
-- ssh-keygen -t rsa
-- ssh-copy-id yourserver 
-- ssh -T yourserver
+使用方法::
+
+  ssh-keygen -t rsa
+  ssh-copy-id yourserver
+  ssh -T yourserver
 
 git
 ---
@@ -27,17 +29,32 @@ git
   git remote add origin ssh://user@server:port/path/to/project.git
   git push origin master
 
+gh-pages::
+
+   git checkout --orphan gh-pages
+   git rm -rf .
+   ...
+   git push origin gh-pages
+
+链接地址：http(s)://<username>.github.io/<projectname>
+
+
 
 pandoc
 ------
-- sudo apt-get install pandoc texlive texlive-xetex texlive-latex-extra rmodern
-- pandoc test.md --toc --smart --latex-engine=xelatex --template=yourtemplate.tex -o test.pdf
+使用方法::
+
+  sudo apt-get install pandoc texlive texlive-xetex texlive-latex-extra rmodern
+  pandoc test.md --toc --smart --latex-engine=xelatex --template=yourtemplate.tex -o test.pdf
 
 sphinx
 ------
-- sudo pip install sphinx sphinx-autobuild
-- sphinx-quickstart
-- sphinx-autobuild . _build_html
+使用方法::
+
+  sudo pip install sphinx sphinx-autobuild
+  sphinx-quickstart
+  make html
+  sphinx-autobuild . _build_html
 
 其他
 ----
