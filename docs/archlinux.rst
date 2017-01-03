@@ -94,3 +94,16 @@ U盘安装
 使用VPN::
 
     pacman -S pptpclient
+
+登录windows系统::
+
+    sudo pacman -S rdesktop
+    rdesktop -g 1440x900 -P -z -x l -r sound:off 192.168.1.1
+
+使用Samba::
+
+    sudo pacman -S samba
+    cd /etc/samba/
+    sudo cp smb.conf.default smb.conf
+
+    vim smb.conf

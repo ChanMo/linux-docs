@@ -233,6 +233,19 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">pptpclient</span>
 </pre></div>
 </div>
+<p>登录windows系统:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">rdesktop</span>
+<span class="n">rdesktop</span> <span class="o">-</span><span class="n">g</span> <span class="mi">1440</span><span class="n">x900</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">z</span> <span class="o">-</span><span class="n">x</span> <span class="n">l</span> <span class="o">-</span><span class="n">r</span> <span class="n">sound</span><span class="p">:</span><span class="n">off</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span>
+</pre></div>
+</div>
+<p>使用Samba:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">samba</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">samba</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="n">smb</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">default</span> <span class="n">smb</span><span class="o">.</span><span class="n">conf</span>
+
+<span class="n">vim</span> <span class="n">smb</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
 </div>
 </div>
 

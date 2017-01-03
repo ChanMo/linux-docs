@@ -207,11 +207,43 @@
 <p>添加用户/组:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">groupadd</span> <span class="n">chen</span>
 <span class="n">useradd</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">g</span> <span class="n">chen</span> <span class="n">chen</span>
+<span class="n">passwd</span> <span class="n">chen</span>
+<span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sudoers</span>
 </pre></div>
 </div>
 <p>安装桌面环境:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">xorg</span><span class="o">-</span><span class="n">xinit</span>
 <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">xfce4</span>
+</pre></div>
+</div>
+<p>安装字体:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">ttf</span><span class="o">-</span><span class="n">bitstream</span><span class="o">-</span><span class="n">vera</span>
+<span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">adobe</span><span class="o">-</span><span class="n">source</span><span class="o">-</span><span class="n">code</span><span class="o">-</span><span class="n">pro</span><span class="o">-</span><span class="n">fonts</span>
+<span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">wqy</span><span class="o">-</span><span class="n">zenhei</span>
+</pre></div>
+</div>
+<p>安装输入法:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">fcitx</span>
+<span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">fcitx</span><span class="o">-</span><span class="n">sunpinyin</span>
+<span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">fcitx</span><span class="o">-</span><span class="n">gtk2</span>
+<span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">fcitx</span><span class="o">-</span><span class="n">configtool</span>
+</pre></div>
+</div>
+<p>使用VPN:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">pptpclient</span>
+</pre></div>
+</div>
+<p>登录windows系统:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">rdesktop</span>
+<span class="n">rdesktop</span> <span class="o">-</span><span class="n">g</span> <span class="mi">1440</span><span class="n">x900</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">z</span> <span class="o">-</span><span class="n">x</span> <span class="n">l</span> <span class="o">-</span><span class="n">r</span> <span class="n">sound</span><span class="p">:</span><span class="n">off</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span>
+</pre></div>
+</div>
+<p>使用Samba:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">samba</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">samba</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="n">smb</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">default</span> <span class="n">smb</span><span class="o">.</span><span class="n">conf</span>
+
+<span class="n">vim</span> <span class="n">smb</span><span class="o">.</span><span class="n">conf</span>
 </pre></div>
 </div>
 </div>
