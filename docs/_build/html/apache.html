@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Opencv &mdash; linux_note 1.0 documentation</title>
+  <title>Apache &mdash; linux_note 1.0 documentation</title>
   
 
   
@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="linux_note 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Opencv" href="opencv.html"/>
         <link rel="prev" title="Arch Linux" href="archlinux.html"/> 
 
   
@@ -89,11 +90,12 @@
 <li class="toctree-l1"><a class="reference internal" href="cad.html">CAD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">常用工具</a></li>
 <li class="toctree-l1"><a class="reference internal" href="archlinux.html">Arch Linux</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Opencv</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Apache</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#https">使用HTTPS</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="opencv.html">Opencv</a></li>
 </ul>
 
             
@@ -124,11 +126,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Opencv</li>
+    <li>Apache</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/opencv.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/apache.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -138,21 +140,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="opencv">
-<h1>Opencv<a class="headerlink" href="#opencv" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="apache">
+<h1>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Arch Linux:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">opencv</span>
-<span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">python</span><span class="o">-</span><span class="n">numpy</span>
+<p>Archlinux:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">apache2</span>
+</pre></div>
+</div>
+<p>Ubuntu:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">apache2</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>github: <a class="reference external" href="https://github.com/opencv/opencv">https://github.com/opencv/opencv</a></p>
-<p>document: <a class="reference external" href="http://docs.opencv.org/master/">http://docs.opencv.org/master/</a></p>
-<p>可以在github上下载测试代码</p>
+<div class="section" id="https">
+<h2>使用HTTPS<a class="headerlink" href="#https" title="Permalink to this headline">¶</a></h2>
+<p>修改站点配置文件:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="n">site</span><span class="o">.</span><span class="n">conf</span>
+
+<span class="o">&lt;</span><span class="n">VirtualHost</span> <span class="o">*</span><span class="p">:</span><span class="mi">443</span><span class="o">&gt;</span>
+  <span class="n">SSLEngine</span> <span class="n">on</span>
+  <span class="n">SSLCertificateFile</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">crt</span>
+  <span class="n">SSLCertificateKeyFile</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">key</span>
+  <span class="n">ServerName</span> <span class="n">site</span><span class="o">.</span><span class="n">com</span>
+  <span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">VirtualHost</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -162,6 +176,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="opencv.html" class="btn btn-neutral float-right" title="Opencv" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="archlinux.html" class="btn btn-neutral" title="Arch Linux" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
